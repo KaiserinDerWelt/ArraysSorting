@@ -1,0 +1,96 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package java_busqueda_intento4;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ *
+ * @author marianalicona
+ */
+public class Java_Busqueda_Intento4 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+              String Nombres [] = {"Mariana", "Cinthya", "Sebastian", "Miguel", "Elia", "Justino", "Jorge", "Lucas", "Mateo","Esther"};
+        //Arreglo estatico Peso (double)
+        double Peso [] = {54.5,59.1,76.4,83.4, 58.2,45.2,90.1,42.6,78.7,58.3};
+        //Arreglo estatico Estatura (double)
+        double Estatura [] = {1.70, 1.63, 1.80, 1.85,1.60,1.50,1.63,1.51, 1.74,1.70};
+        //Arreglo estatico Edad (double)
+        int Edad [] = {27,39,25,37,57,19,21,9,34,66};
+        //Bienvenida al programa
+        System.out.println("Bienvenido al programa NutriDieta");
+System.out.println("De acuerdo a tu informacion asignaremos la dieta a tu paciente.");
+System.out.println("Para empezar conoceremos los datos con los que cuentas en tu Base de Datos");
+System.out.println("1.Los nombres SIN ORDENAR son:");
+System.out.println(Arrays.toString(Nombres));//Metodo array sort para ordenar
+System.out.println("1.1 Los nombres ordenados ALFABETICAMENTE son:");
+            //METODO SORT PARA ORDENAR NOMBRES
+            Arrays.sort(Nombres);//Metodo array sort para ordenar Nombres
+System.out.println(Arrays.toString(Nombres));
+System.out.println("2.Los datos de edad SIN ordenar son:");
+System.out.println(Arrays.toString(Edad));
+System.out.println("2.1 Los datos de edad ordenados ASCENDENTEMENTE son:");
+              Arrays.sort(Edad);//Metodo array sort para ordenar Edad
+System.out.println(Arrays.toString(Edad));
+System.out.println("2.2 Los datos de edad ordenados DESCENDENTEMENTE son:");
+Arrays.sort(Edad);//Sentencia for para ordenar descendentemente la edad
+                  for (int i = Edad.length-1; i >= 0; i--) {
+                   System.out.print(", "+Edad[i]);}      
+                         System.out.print("\n");
+System.out.println("3.Los datos de peso SIN ordenar son:");
+System.out.println(Arrays.toString(Peso));
+System.out.println("3.1 Los datos de peso ordenados ASCENDENTEMENTE son:");
+Arrays.sort(Peso);//Metodo array sort para ordenar Peso
+System.out.println(Arrays.toString(Peso));
+System.out.println("3.2 Los datos de peso ordenados DESCENDENTEMENTE son:");
+                  Arrays.sort(Peso);//Sentencia for para ordenar peso
+                         for (int i = Peso.length-1; i >= 0; i--) {
+ System.out.print(", "+Peso[i]);
+ }   
+System.out.print("\n");
+System.out.println("4. Los datos de estatura SIN ordenar son:");
+System.out.println(Arrays.toString(Estatura));
+                Arrays.sort(Estatura);//Metodo array sort para ordenar Estatura
+                 System.out.println("4.1 Los datos de Estatura ordenados ASCENDENTEMENTE  son:");
+                        System.out.println(Arrays.toString(Estatura));
+                         System.out.println("4.2 Los datos de Estatura ordenados DESCENDENTEMENTE  son:");
+                         //Sentencia for para ordenar la estatura de mayor a menor
+                         for (int i = Estatura.length-1; i >= 0; i--) {
+                          System.out.print(", "+Estatura[i]);
+                                                             }
+  System.out.print("\n");
+ System.out.println("5. Ahora vamos a buscar un nombre en el array nombres");
+                            //Busqueda de algun nombre en el arreglo
+   String Busqueda;
+   Scanner BuscarNombre = new Scanner (System.in);
+   System.out.println("Por favor incluye alguno de los nombres incluidos en la lista No.1: ");
+   Busqueda= BuscarNombre.next();
+   //Expresion boleana para revisar si el nombre esta o no.
+   boolean Verificacion = false; 
+        int n;//Declaracion de la variable n
+        //Sentencia for para hacer jalar contenido del array
+       for(n = 0; n<Nombres.length; n++) //Sentencia for para hacer jalar contenido del array
+		{ 
+			if (Busqueda.equals(Nombres[n])) //Metodo equals para comparar
+			{
+				System.out.println("El nombre ingresado si esta en el arreglo");
+				Verificacion = true;
+			}
+		}
+		
+		if (!Verificacion)
+			System.out.println("Este nombre no esta en el arreglo.");
+    }
+  
+    }
+    
+ 
